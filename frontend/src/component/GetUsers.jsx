@@ -6,7 +6,8 @@ const GetUsers = ({refresh}) => {
     useEffect(  () => {
         const fetchUsers = async () => {
             try {
-                const res = await axios.get("http://localhost:3000/api/users");
+                // const res = await axios.get("http://localhost:3000/api/users");
+                const res = await axios.get("https://form-full-stack.vercel.app/api/users"); 
                 setUsers(res.data);
             } catch (error) {
                 console.log(error.response?.data || error.message);
@@ -20,7 +21,8 @@ const GetUsers = ({refresh}) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:3000/api/users/${id}`);
+            // await axios.delete(`http://localhost:3000/api/users/${id}`);
+            await axios.delete(`https://form-full-stack.vercel.app/api/users/${id}`);
             setUsers(users.filter(user => user._id !== id));
             
         } catch (error) {

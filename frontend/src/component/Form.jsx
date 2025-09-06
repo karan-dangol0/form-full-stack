@@ -18,7 +18,8 @@ const Form = () => {
   const submitForm = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3000/api/users", formData);
+      // const res = await axios.post("http://localhost:3000/api/users", formData);
+      const res = await axios.post("https://form-full-stack.vercel.app/api/users", formData);
       console.log(res.data);
         setFormData({
       firstName: "",
